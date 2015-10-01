@@ -13,6 +13,8 @@
 		495567141BBD0DBE00EE098C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495567121BBD0DBE00EE098C /* Main.storyboard */; };
 		495567161BBD0DBE00EE098C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495567151BBD0DBE00EE098C /* Assets.xcassets */; };
 		495567191BBD0DBE00EE098C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495567171BBD0DBE00EE098C /* LaunchScreen.storyboard */; };
+		495567211BBD1B8100EE098C /* GCD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495567201BBD1B8100EE098C /* GCD+Extension.swift */; };
+		495567241BBD551000EE098C /* ICLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495567231BBD551000EE098C /* ICLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		495567151BBD0DBE00EE098C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		495567181BBD0DBE00EE098C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4955671A1BBD0DBE00EE098C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		495567201BBD1B8100EE098C /* GCD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GCD+Extension.swift"; sourceTree = "<group>"; };
+		495567231BBD551000EE098C /* ICLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,26 @@
 				495567151BBD0DBE00EE098C /* Assets.xcassets */,
 				495567171BBD0DBE00EE098C /* LaunchScreen.storyboard */,
 				4955671A1BBD0DBE00EE098C /* Info.plist */,
+				495567221BBD1B8700EE098C /* Extensions */,
+				495567251BBD551600EE098C /* Subclasses */,
 			);
 			path = AnimationTest;
+			sourceTree = "<group>";
+		};
+		495567221BBD1B8700EE098C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				495567201BBD1B8100EE098C /* GCD+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		495567251BBD551600EE098C /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				495567231BBD551000EE098C /* ICLabel.swift */,
+			);
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495567211BBD1B8100EE098C /* GCD+Extension.swift in Sources */,
+				495567241BBD551000EE098C /* ICLabel.swift in Sources */,
 				495567111BBD0DBE00EE098C /* SecondViewController.swift in Sources */,
 				4955670D1BBD0DBE00EE098C /* AppDelegate.swift in Sources */,
 				4955670F1BBD0DBE00EE098C /* FirstViewController.swift in Sources */,
@@ -253,6 +277,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AnimationTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.iculture.AnimationTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -264,6 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AnimationTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.iculture.AnimationTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,6 +315,7 @@
 				4955671F1BBD0DBE00EE098C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
