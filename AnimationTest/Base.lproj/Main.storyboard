@@ -29,6 +29,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zo stem je Apple Music beter af op jouw muzieksmaak" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5y-zr-BCU" customClass="ICLabel" customModule="AnimationTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="216" width="600" height="95"/>
                                         <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -80,7 +81,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXv-i2-nAT">
                                 <rect key="frame" x="0.0" y="424" width="600" height="176"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.95686274510000002" green="0.05886916214" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <animations/>
