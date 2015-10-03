@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9052" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9052" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9040"/>
@@ -121,32 +121,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhC-iR-zfn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWj-el-66S">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8F5-wI-oqC">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awk-Yu-UmF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="371"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="featuredimage" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-9x-Kuc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="259.5"/>
+                                                                <animations/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zo stem je Apple Music beter af op jouw muzieksmaak" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fus-Jc-oqe">
+                                                                <rect key="frame" x="0.0" y="259.5" width="600" height="111.5"/>
+                                                                <animations/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="Fus-Jc-oqe" secondAttribute="trailing" id="55a-4t-dkq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="3ba-9x-Kuc" secondAttribute="trailing" id="CPH-Y8-4zV"/>
+                                                            <constraint firstItem="3ba-9x-Kuc" firstAttribute="leading" secondItem="awk-Yu-UmF" secondAttribute="leading" id="Ecy-ib-rm5"/>
+                                                            <constraint firstItem="Fus-Jc-oqe" firstAttribute="leading" secondItem="awk-Yu-UmF" secondAttribute="leading" id="VqH-S4-fU7"/>
+                                                            <constraint firstItem="3ba-9x-Kuc" firstAttribute="top" secondItem="awk-Yu-UmF" secondAttribute="top" id="XaI-XD-ALJ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Fus-Jc-oqe" secondAttribute="bottom" id="olU-es-5g6"/>
+                                                            <constraint firstItem="3ba-9x-Kuc" firstAttribute="height" secondItem="awk-Yu-UmF" secondAttribute="height" multiplier="0.7" id="sU6-bj-4xt"/>
+                                                            <constraint firstItem="Fus-Jc-oqe" firstAttribute="height" secondItem="awk-Yu-UmF" secondAttribute="height" multiplier="0.3" id="wNs-OQ-m1V"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqr-Wv-dmO">
+                                                        <rect key="frame" x="0.0" y="371" width="600" height="49"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="49" id="bsN-01-cYH"/>
+                                                        </constraints>
+                                                        <items>
+                                                            <barButtonItem width="8" systemItem="fixedSpace" id="zOa-ua-JmB"/>
+                                                            <barButtonItem systemItem="action" id="hvq-7R-B6j"/>
+                                                            <barButtonItem systemItem="flexibleSpace" id="zKh-bt-9Mt"/>
+                                                            <barButtonItem image="favorite" id="UVT-eh-dtz"/>
+                                                            <barButtonItem systemItem="flexibleSpace" id="rbC-KI-Qzi"/>
+                                                            <barButtonItem image="resize" id="5L0-uV-HWP"/>
+                                                            <barButtonItem systemItem="flexibleSpace" id="Zq0-U4-s6a"/>
+                                                            <barButtonItem image="more" id="xar-PT-NNL"/>
+                                                            <barButtonItem width="8" systemItem="fixedSpace" id="fGf-sb-dVM"/>
+                                                        </items>
+                                                    </toolbar>
+                                                </subviews>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstItem="awk-Yu-UmF" firstAttribute="top" secondItem="8F5-wI-oqC" secondAttribute="top" id="IyY-BF-GMD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="awk-Yu-UmF" secondAttribute="bottom" constant="49" id="bpM-Sv-1Wc"/>
+                                                    <constraint firstItem="awk-Yu-UmF" firstAttribute="leading" secondItem="8F5-wI-oqC" secondAttribute="leading" id="eGG-Tz-a6G"/>
+                                                    <constraint firstAttribute="trailing" secondItem="awk-Yu-UmF" secondAttribute="trailing" id="hGo-Y7-PKW"/>
+                                                    <constraint firstItem="Rqr-Wv-dmO" firstAttribute="leading" secondItem="8F5-wI-oqC" secondAttribute="leading" id="j46-HT-JPt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Rqr-Wv-dmO" secondAttribute="bottom" id="rM8-WS-9S3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rqr-Wv-dmO" secondAttribute="trailing" id="t4w-M1-qgV"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yy9-Mv-z1V">
+                                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstItem="yy9-Mv-z1V" firstAttribute="height" secondItem="rWj-el-66S" secondAttribute="height" multiplier="0.3" id="0MH-cm-NCe"/>
+                                            <constraint firstAttribute="trailing" secondItem="8F5-wI-oqC" secondAttribute="trailing" id="Oh4-T9-LWm"/>
+                                            <constraint firstItem="8F5-wI-oqC" firstAttribute="height" secondItem="rWj-el-66S" secondAttribute="height" multiplier="0.7" id="Th3-X7-hH0"/>
+                                            <constraint firstItem="8F5-wI-oqC" firstAttribute="top" secondItem="rWj-el-66S" secondAttribute="top" id="Uff-xP-KVj"/>
+                                            <constraint firstAttribute="trailing" secondItem="yy9-Mv-z1V" secondAttribute="trailing" id="fJy-Kr-IeT"/>
+                                            <constraint firstItem="yy9-Mv-z1V" firstAttribute="leading" secondItem="rWj-el-66S" secondAttribute="leading" id="g66-pf-fuq"/>
+                                            <constraint firstItem="8F5-wI-oqC" firstAttribute="leading" secondItem="rWj-el-66S" secondAttribute="leading" id="gwj-xF-vau"/>
+                                            <constraint firstItem="yy9-Mv-z1V" firstAttribute="top" secondItem="awk-Yu-UmF" secondAttribute="bottom" constant="49" id="oUQ-ld-Q8z"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstItem="rWj-el-66S" firstAttribute="leading" secondItem="VhC-iR-zfn" secondAttribute="leading" id="CaN-m4-s3x"/>
+                                    <constraint firstAttribute="bottom" secondItem="rWj-el-66S" secondAttribute="bottom" id="FcZ-I0-GeV"/>
+                                    <constraint firstAttribute="trailing" secondItem="rWj-el-66S" secondAttribute="trailing" id="VZg-lF-GDe"/>
+                                    <constraint firstItem="rWj-el-66S" firstAttribute="top" secondItem="VhC-iR-zfn" secondAttribute="top" id="bpg-8l-DcS"/>
+                                    <constraint firstItem="rWj-el-66S" firstAttribute="centerX" secondItem="VhC-iR-zfn" secondAttribute="centerX" id="nYU-w4-eQZ"/>
+                                    <constraint firstItem="rWj-el-66S" firstAttribute="centerY" secondItem="VhC-iR-zfn" secondAttribute="centerY" id="rHq-Fy-PJg"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="VhC-iR-zfn" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="3fU-SV-9A4"/>
+                            <constraint firstItem="VhC-iR-zfn" firstAttribute="bottom" secondItem="QS5-Rx-YEW" secondAttribute="bottomMargin" id="Qvg-sf-KXl"/>
+                            <constraint firstItem="VhC-iR-zfn" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="cde-3Z-DCf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VhC-iR-zfn" secondAttribute="trailing" constant="-20" id="iqa-UC-QdY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V0N-tw-kZy"/>
+                    <connections>
+                        <outlet property="masterScrollView" destination="VhC-iR-zfn" id="eBi-zi-rJd"/>
+                        <outlet property="toolbar" destination="Rqr-Wv-dmO" id="tGv-xP-wNg"/>
+                        <outlet property="webContainerToPreviewView" destination="oUQ-ld-Q8z" id="pWz-62-tdo"/>
+                        <outlet property="webContainerView" destination="yy9-Mv-z1V" id="G7H-Ic-hQZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
