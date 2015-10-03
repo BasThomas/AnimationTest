@@ -124,10 +124,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhC-iR-zfn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWj-el-66S">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWj-el-66S" userLabel="Content view">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8F5-wI-oqC">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8F5-wI-oqC" userLabel="Preview view">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awk-Yu-UmF">
@@ -189,22 +189,28 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yy9-Mv-z1V">
-                                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
+                                                <rect key="frame" x="0.0" y="420" width="600" height="2000"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstItem="yy9-Mv-z1V" firstAttribute="height" secondItem="rWj-el-66S" secondAttribute="height" multiplier="0.3" id="0MH-cm-NCe"/>
+                                            <constraint firstItem="yy9-Mv-z1V" firstAttribute="height" secondItem="rWj-el-66S" secondAttribute="height" multiplier="0.3" constant="1" id="0MH-cm-NCe"/>
                                             <constraint firstAttribute="trailing" secondItem="8F5-wI-oqC" secondAttribute="trailing" id="Oh4-T9-LWm"/>
                                             <constraint firstItem="8F5-wI-oqC" firstAttribute="height" secondItem="rWj-el-66S" secondAttribute="height" multiplier="0.7" id="Th3-X7-hH0"/>
                                             <constraint firstItem="8F5-wI-oqC" firstAttribute="top" secondItem="rWj-el-66S" secondAttribute="top" id="Uff-xP-KVj"/>
                                             <constraint firstAttribute="trailing" secondItem="yy9-Mv-z1V" secondAttribute="trailing" id="fJy-Kr-IeT"/>
                                             <constraint firstItem="yy9-Mv-z1V" firstAttribute="leading" secondItem="rWj-el-66S" secondAttribute="leading" id="g66-pf-fuq"/>
                                             <constraint firstItem="8F5-wI-oqC" firstAttribute="leading" secondItem="rWj-el-66S" secondAttribute="leading" id="gwj-xF-vau"/>
+                                            <constraint firstAttribute="bottom" secondItem="yy9-Mv-z1V" secondAttribute="bottom" constant="-1820" id="oFS-0T-cJ1"/>
                                             <constraint firstItem="yy9-Mv-z1V" firstAttribute="top" secondItem="awk-Yu-UmF" secondAttribute="bottom" constant="49" id="oUQ-ld-Q8z"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0MH-cm-NCe"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -221,10 +227,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VhC-iR-zfn" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="3fU-SV-9A4"/>
+                            <constraint firstItem="VhC-iR-zfn" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="3fU-SV-9A4"/>
                             <constraint firstItem="VhC-iR-zfn" firstAttribute="bottom" secondItem="QS5-Rx-YEW" secondAttribute="bottomMargin" id="Qvg-sf-KXl"/>
                             <constraint firstItem="VhC-iR-zfn" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="cde-3Z-DCf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VhC-iR-zfn" secondAttribute="trailing" constant="-20" id="iqa-UC-QdY"/>
+                            <constraint firstAttribute="trailing" secondItem="VhC-iR-zfn" secondAttribute="trailing" id="iqa-UC-QdY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V0N-tw-kZy"/>

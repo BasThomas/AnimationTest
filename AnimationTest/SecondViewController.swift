@@ -7,44 +7,41 @@
 //
 
 import UIKit
+import WebKit
 
 private let toolbarHeight: CGFloat = 49.0
 
 class SecondViewController: UIViewController {
   
   @IBOutlet weak var toolbar: UIToolbar!
+  
   @IBOutlet weak var webContainerView: UIView!
+  @IBOutlet weak var webContainerViewHeightConstraint: NSLayoutConstraint!
+  
   @IBOutlet weak var webContainerToPreviewView: NSLayoutConstraint!
   @IBOutlet weak var masterScrollView: UIScrollView!
   
   var masterScrollViewLastContentOffset: CGFloat = 0.0
   var lineView = UIView()
   
+  var webView: WKWebView?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     self.toolbar.delegate = self
     self.masterScrollView.delegate = self
-  }
-  
-  func createLineView() {
-    lineView = UIView()
-    lineView.backgroundColor = .redColor()
     
-    var toolbarFrame = self.toolbar.frame
-    toolbarFrame.origin.y = (toolbarFrame.origin.y + toolbarFrame.size.height) - 1
-    toolbarFrame.size.height = 1
+    self.updateNavigationItemTitle("__DATE_PLACEHOLDER__")
     
-    lineView.frame = toolbarFrame
+    //self.webContainerViewHeightConstraint.constant = UIScreen.mainScreen().bounds.size.height
+    //self.webView = WKWebView(frame: UIScreen.mainScreen().bounds)
     
-    guard let toolbarSuperview = self.toolbar.superview else { return }
-    toolbarSuperview.addSubview(lineView)
-  }
-  
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
+    guard let webView = self.webView else { return }
+    webView.scrollView.scrollEnabled = false
+    self.webContainerView.addSubview(webView)
     
-    self.createLineView()
+    webView.loadRequest(NSURLRequest(URL: NSURL(string: "https://github.com")!))
   }
   
   override func didReceiveMemoryWarning() {
@@ -95,7 +92,6 @@ extension SecondViewController: UIScrollViewDelegate {
       }
       
       UIView.animateWithDuration(0.3, animations: {
-        
         // Update webview constant
         self.webContainerToPreviewView.constant = webContainerConstant
         
@@ -105,10 +101,25 @@ extension SecondViewController: UIScrollViewDelegate {
         self.lineView.frame = lineFrame
         
         self.view.layoutIfNeeded()
-        
       }, completion: { succeed in
          print(succeed)
       })
     }
+  }
+  
+  func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    print("did and dragging")
+  }
+}
+
+// MARK: - Helpers
+extension SecondViewController {
+  
+  func hideToolbar() {
+    
+  }
+  
+  func updateNavigationItemTitle(title: String) {
+    self.navigationItem.title = title
   }
 }
