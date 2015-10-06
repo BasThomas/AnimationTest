@@ -125,11 +125,48 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aff-G5-Q0B">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="YJF-oL-J3e"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem width="8" systemItem="fixedSpace" id="cgK-Rs-Y1K"/>
+                                    <barButtonItem systemItem="action" id="Eil-yl-5Of">
+                                        <connections>
+                                            <action selector="share:" destination="jps-wI-wdW" id="Jvz-g7-geF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="KOk-X9-0HA"/>
+                                    <barButtonItem image="favorite" id="WBI-eY-fGQ" userLabel="Favorite">
+                                        <connections>
+                                            <action selector="favorite:" destination="jps-wI-wdW" id="AMR-vc-7CN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Zuu-sD-lt4"/>
+                                    <barButtonItem image="resize" id="INP-Wu-ZkX" userLabel="Resize">
+                                        <connections>
+                                            <action selector="resize:" destination="jps-wI-wdW" id="vcy-vo-Xee"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="mzh-pR-8Xz"/>
+                                    <barButtonItem image="more" id="NOf-Yq-o6N" userLabel="More">
+                                        <connections>
+                                            <action selector="moreOptions:" destination="jps-wI-wdW" id="2J8-J7-0Sm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="8" systemItem="fixedSpace" id="hcZ-0a-nRl"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="6Bw-Vs-WIc" secondAttribute="bottom" id="0fA-Cc-cic"/>
+                            <constraint firstItem="Aff-G5-Q0B" firstAttribute="leading" secondItem="r0l-oF-irz" secondAttribute="leadingMargin" constant="-20" id="4Lj-cr-P2t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Aff-G5-Q0B" secondAttribute="trailing" constant="-20" id="9Of-y1-dyf"/>
+                            <constraint firstItem="1sK-J7-Wx6" firstAttribute="top" secondItem="Aff-G5-Q0B" secondAttribute="bottom" constant="-49" id="V6M-An-sCY"/>
                             <constraint firstItem="6Bw-Vs-WIc" firstAttribute="leading" secondItem="r0l-oF-irz" secondAttribute="leading" id="W0G-nK-SIy"/>
                             <constraint firstAttribute="trailing" secondItem="6Bw-Vs-WIc" secondAttribute="trailing" id="WCc-Dy-hyo"/>
                             <constraint firstItem="6Bw-Vs-WIc" firstAttribute="top" secondItem="r0l-oF-irz" secondAttribute="top" id="o4K-j5-3lk"/>
@@ -137,6 +174,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="U5Q-hP-Ndf"/>
                     <connections>
+                        <outlet property="bottomToolbarHeightConstraint" destination="YJF-oL-J3e" id="uat-TO-N72"/>
                         <outlet property="mainScrollView" destination="6Bw-Vs-WIc" id="35k-3c-LZB"/>
                     </connections>
                 </viewController>
@@ -258,14 +296,52 @@
                                     <constraint firstItem="rWj-el-66S" firstAttribute="centerY" secondItem="VhC-iR-zfn" secondAttribute="centerY" id="rHq-Fy-PJg"/>
                                 </constraints>
                             </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zvy-hz-5oF">
+                                <rect key="frame" x="0.0" y="951" width="600" height="49"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Oyh-lk-YZ5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="XlL-i7-5eL"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem width="8" systemItem="fixedSpace" id="FQj-qG-Jnh"/>
+                                    <barButtonItem systemItem="action" id="T3z-dl-fqK">
+                                        <connections>
+                                            <action selector="share:" destination="jps-wI-wdW" id="pzC-h3-LLc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Azt-in-fWT"/>
+                                    <barButtonItem image="favorite" id="K0f-3E-sAx" userLabel="Favorite">
+                                        <connections>
+                                            <action selector="favorite:" destination="jps-wI-wdW" id="eaL-dd-mAf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="pLZ-yb-cuc"/>
+                                    <barButtonItem image="resize" id="uE2-TK-R4W" userLabel="Resize">
+                                        <connections>
+                                            <action selector="resize:" destination="jps-wI-wdW" id="Lc0-hh-sg2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="DhT-VS-Yjb"/>
+                                    <barButtonItem image="more" id="oxU-Ro-Wpb" userLabel="More">
+                                        <connections>
+                                            <action selector="moreOptions:" destination="jps-wI-wdW" id="1d8-WR-tTj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="8" systemItem="fixedSpace" id="cWb-cI-Cq1"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VhC-iR-zfn" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="3fU-SV-9A4"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Zvy-hz-5oF" secondAttribute="bottom" constant="-49" id="94B-ye-R2T"/>
                             <constraint firstItem="VhC-iR-zfn" firstAttribute="bottom" secondItem="QS5-Rx-YEW" secondAttribute="bottomMargin" id="Qvg-sf-KXl"/>
                             <constraint firstItem="VhC-iR-zfn" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="cde-3Z-DCf"/>
                             <constraint firstAttribute="trailing" secondItem="VhC-iR-zfn" secondAttribute="trailing" id="iqa-UC-QdY"/>
+                            <constraint firstAttribute="trailing" secondItem="Zvy-hz-5oF" secondAttribute="trailing" id="xmV-8B-hSu"/>
+                            <constraint firstItem="Zvy-hz-5oF" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="y7a-vs-l3l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V0N-tw-kZy"/>

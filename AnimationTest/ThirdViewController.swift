@@ -16,6 +16,11 @@ class ThirdViewController: UIViewController {
       mainScrollView.delegate = self
     }
   }
+  @IBOutlet weak var bottomToolbarHeightConstraint: NSLayoutConstraint! {
+    didSet {
+//      bottomToolbarHeightConstraint.constant = 0.0
+    }
+  }
   
   var preview: UIView! {
     didSet {
@@ -108,59 +113,28 @@ extension ThirdViewController: UIScrollViewDelegate {
   
   func scrollViewDidScroll(scrollView: UIScrollView) {
     let contentOffset = scrollView.contentOffset
-    print(contentOffset.y)
     
     // Toolbar
-//    if contentOffset.y > initialOffset.y && !toolbarHidden {
-//      toolbarHidden = true
-//      
-//      UIView.animateWithDuration(0.45, animations: {
-//        self.heightConstraint?.constant = 0.0
-//        self.view.layoutIfNeeded()
-//        }, completion: { success in
-//          self.toolbar.hidden = true
-//          // Set toolbar at bottom
-//          self.toolbar.frame = CGRect(
-//            x: 0.0,
-//            y: (self.screenSize.height - self.toolbarHeight),
-//            width: self.previewSize.width,
-//            height: self.toolbarHeight)
-//          
-//          self.toolbar.hidden = false
-//          self.tabBarController?.tabBar.hidden = true
-//          
-//          print(success)
-//      })
-//    }
-//    
-//    if contentOffset.y <= initialOffset.y && toolbarHidden {
-//      toolbarHidden = false
-//      toolbar.hidden = false
-//      // Set toolbar at top
-//      toolbar.frame = CGRect(
-//        x: 0.0,
-//        y: (previewSize.height - toolbarHeight),
-//        width: previewSize.width,
-//        height: toolbarHeight)
-//      toolbar.hidden = false
-//      tabBarController?.tabBar.hidden = false
-//      
-//      UIView.animateWithDuration(0.45, animations: {
-//        self.heightConstraint?.constant = self.toolbarHeight
-//        self.view.layoutIfNeeded()
-//        }, completion: { success in
-//          print(success)
-//      })
-//    }
+    if contentOffset.y > initialOffset.y && !toolbarHidden {
+      self.tabBarController?.tabBar.hidden = true
+      toolbarHidden = true
+    }
+    
+    if contentOffset.y <= initialOffset.y && toolbarHidden {
+      self.tabBarController?.tabBar.hidden = false
+      toolbarHidden = false
+    }
     
     
     // Navigation bar
     if contentOffset.y > (previewImageViewSize.height + previewTitleLabelSize.height + initialOffset.y) {
       updateNavigationTitle(previewTitleText)
+      navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "collapse"), style: .Plain, target: self, action: Selector("toTop:"))
     }
     
     if contentOffset.y < (previewImageViewSize.height + previewTitleLabelSize.height + initialOffset.y) {
       updateNavigationTitle("__DATE__")
+      navigationItem.leftBarButtonItem = nil
     }
   }
 }
@@ -332,19 +306,23 @@ private extension ThirdViewController {
 // MARK: - Actions
 extension ThirdViewController {
   
-  func share(barButtonItem: UIBarButtonItem) {
+  @IBAction func share(barButtonItem: UIBarButtonItem) {
     print("did tap share")
   }
   
-  func favorite(barButtonItem: UIBarButtonItem) {
+  @IBAction func favorite(barButtonItem: UIBarButtonItem) {
     print("did tap favorite")
   }
   
-  func changeTextSize(barButtonItem: UIBarButtonItem) {
-    print("did tap change text size")
+  @IBAction func resize(barButtonItem: UIBarButtonItem) {
+    print("did tap resize")
   }
   
-  func moreOptions(barButtonItem: UIBarButtonItem) {
+  @IBAction func moreOptions(barButtonItem: UIBarButtonItem) {
     print("did tap more options")
+  }
+  
+  func toTop(barButtonItem: UIBarButtonItem) {
+    mainScrollView.setContentOffset(CGPoint(x: 0.0, y: initialOffset.y), animated: true)
   }
 }
