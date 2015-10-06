@@ -16,11 +16,6 @@ class ThirdViewController: UIViewController {
       mainScrollView.delegate = self
     }
   }
-  @IBOutlet weak var bottomToolbarHeightConstraint: NSLayoutConstraint! {
-    didSet {
-//      bottomToolbarHeightConstraint.constant = 0.0
-    }
-  }
   
   var preview: UIView! {
     didSet {
@@ -115,18 +110,6 @@ extension ThirdViewController: UIScrollViewDelegate {
   func scrollViewDidScroll(scrollView: UIScrollView) {
     let contentOffset = scrollView.contentOffset
     
-    // Toolbar
-    if contentOffset.y > initialOffset.y && !toolbarHidden {
-      self.tabBarController?.tabBar.hidden = true
-      toolbarHidden = true
-    }
-    
-    if contentOffset.y <= initialOffset.y && toolbarHidden {
-      self.tabBarController?.tabBar.hidden = false
-      toolbarHidden = false
-    }
-    
-    
     // Navigation bar
     if contentOffset.y >= (previewImageViewSize.height + previewTitleLabelSize.height + initialOffset.y) && !navigationUpdated {
       updateNavigationTitle(previewTitleText)
@@ -138,6 +121,17 @@ extension ThirdViewController: UIScrollViewDelegate {
       updateNavigationTitle("__DATE__")
       navigationItem.leftBarButtonItem = nil
       navigationUpdated = false
+    }
+    
+    // Toolbar
+    if contentOffset.y > (previewImageViewSize.height + previewTitleLabelSize.height + toolbarHeight + initialOffset.y) && !toolbarHidden {
+      self.tabBarController?.tabBar.hidden = true
+      toolbarHidden = true
+    }
+    
+    if contentOffset.y <= (previewImageViewSize.height + previewTitleLabelSize.height + toolbarHeight + initialOffset.y) && toolbarHidden {
+      self.tabBarController?.tabBar.hidden = false
+      toolbarHidden = false
     }
   }
 }

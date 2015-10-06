@@ -174,7 +174,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="U5Q-hP-Ndf"/>
                     <connections>
-                        <outlet property="bottomToolbarHeightConstraint" destination="YJF-oL-J3e" id="uat-TO-N72"/>
                         <outlet property="mainScrollView" destination="6Bw-Vs-WIc" id="35k-3c-LZB"/>
                     </connections>
                 </viewController>
