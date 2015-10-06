@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4909BFD01BC2B5B200D3F23E /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909BFCF1BC2B5B200D3F23E /* Bool+Extension.swift */; };
 		4909BFD21BC2C58500D3F23E /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909BFD11BC2C58500D3F23E /* ThirdViewController.swift */; };
+		4927CA1B1BC3A12300631A26 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927CA1A1BC3A12300631A26 /* UIView+Extension.swift */; };
 		4955670D1BBD0DBE00EE098C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955670C1BBD0DBE00EE098C /* AppDelegate.swift */; };
 		4955670F1BBD0DBE00EE098C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955670E1BBD0DBE00EE098C /* FirstViewController.swift */; };
 		495567111BBD0DBE00EE098C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495567101BBD0DBE00EE098C /* SecondViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		4909BFCF1BC2B5B200D3F23E /* Bool+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
 		4909BFD11BC2C58500D3F23E /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		4927CA1A1BC3A12300631A26 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		495567091BBD0DBE00EE098C /* AnimationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4955670C1BBD0DBE00EE098C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4955670E1BBD0DBE00EE098C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				495567201BBD1B8100EE098C /* GCD+Extension.swift */,
 				4909BFCF1BC2B5B200D3F23E /* Bool+Extension.swift */,
+				4927CA1A1BC3A12300631A26 /* UIView+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				495567211BBD1B8100EE098C /* GCD+Extension.swift in Sources */,
 				495567241BBD551000EE098C /* ICLabel.swift in Sources */,
+				4927CA1B1BC3A12300631A26 /* UIView+Extension.swift in Sources */,
 				495567111BBD0DBE00EE098C /* SecondViewController.swift in Sources */,
 				4909BFD21BC2C58500D3F23E /* ThirdViewController.swift in Sources */,
 				4909BFD01BC2B5B200D3F23E /* Bool+Extension.swift in Sources */,

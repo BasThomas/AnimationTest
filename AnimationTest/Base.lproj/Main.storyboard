@@ -343,11 +343,11 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Item-->
+        <!--Third-->
         <scene sceneID="ADh-Vp-sjx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IeX-lH-CG5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="favorite" id="Lfx-s5-Ush"/>
+                    <tabBarItem key="tabBarItem" title="Third" image="favorite" id="Lfx-s5-Ush"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2jB-fG-640">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
