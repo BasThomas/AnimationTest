@@ -73,6 +73,7 @@ class ThirdViewController: UIViewController {
   private let previewTitleText                    = "Zo stem je Apple Music beter af op jouw muzieksmaak"
   
   private var toolbarHidden                       = false
+  private var navigationUpdated                   = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -127,14 +128,16 @@ extension ThirdViewController: UIScrollViewDelegate {
     
     
     // Navigation bar
-    if contentOffset.y > (previewImageViewSize.height + previewTitleLabelSize.height + initialOffset.y) {
+    if contentOffset.y >= (previewImageViewSize.height + previewTitleLabelSize.height + initialOffset.y) && !navigationUpdated {
       updateNavigationTitle(previewTitleText)
       navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "collapse"), style: .Plain, target: self, action: Selector("toTop:"))
+      navigationUpdated = true
     }
     
-    if contentOffset.y < (previewImageViewSize.height + previewTitleLabelSize.height + initialOffset.y) {
+    if contentOffset.y < (previewImageViewSize.height + previewTitleLabelSize.height + initialOffset.y) && navigationUpdated {
       updateNavigationTitle("__DATE__")
       navigationItem.leftBarButtonItem = nil
+      navigationUpdated = false
     }
   }
 }
