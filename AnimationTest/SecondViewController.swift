@@ -16,15 +16,15 @@ class SecondViewController: UIViewController {
   @IBOutlet weak var toolbar: UIToolbar!
   
   @IBOutlet weak var webContainerView: UIView!
-  @IBOutlet weak var webContainerViewHeightConstraint: NSLayoutConstraint!
   
   @IBOutlet weak var webContainerToPreviewView: NSLayoutConstraint!
   @IBOutlet weak var masterScrollView: UIScrollView!
   
   var masterScrollViewLastContentOffset: CGFloat = 0.0
-  var lineView = UIView()
   
   var webView: WKWebView?
+  
+  var toolbarHidden = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -66,43 +66,82 @@ extension SecondViewController: UIScrollViewDelegate {
     let yOffset = scrollView.contentOffset.y + navigationBarHeight + navigationBarY
     
     // Detect direction
-    var scrollDirection = 1
+    var scrollDirection: Direction = .Unknown
     if self.masterScrollViewLastContentOffset > scrollView.contentOffset.y {
-      scrollDirection = 1
+      scrollDirection = .Up
     } else if self.masterScrollViewLastContentOffset < scrollView.contentOffset.y {
-      scrollDirection = -1
+      scrollDirection = .Down
     }
     
     self.masterScrollViewLastContentOffset = scrollView.contentOffset.y
     
+    var webContainerConstant: CGFloat = 0.0
+    var hideToolbar = false
+    
+    // Top
+    if scrollDirection == .Down {
+      webContainerConstant = 0.0
+      hideToolbar = true
+      
+      // Bottom
+    } else if scrollDirection == .Up {
+      webContainerConstant = toolbarHeight
+      hideToolbar = false
+    }
+    
     // Move view above toolbar
     if yOffset > 0.0 && yOffset <= toolbarHeight {
-      var webContainerConstant: CGFloat = 0.0
-      var lineFrameOriginY: CGFloat = 0.0
-      
-      // Top
-      if scrollDirection == -1 {
-        webContainerConstant = 0
-        lineFrameOriginY = toolbarHeight
-        
-        // Bottom
-      } else if scrollDirection == 1 {
-        webContainerConstant = toolbarHeight
-        lineFrameOriginY = toolbarHeight
-      }
-      
-      UIView.animateWithDuration(0.3, animations: {
+      UIView.animateWithDuration(0.45, animations: {
         // Update webview constant
         self.webContainerToPreviewView.constant = webContainerConstant
+        self.tabBarController?.tabBar.hidden = hideToolbar
+//        self.bottomToolbar.hidden = !hideToolbar
         
-        // New line frame
-        var lineFrame = self.lineView.frame
-        lineFrame.origin.y = lineFrame.origin.y - lineFrameOriginY
-        self.lineView.frame = lineFrame
+        if scrollDirection == .Up {
+          self.toolbarHidden = false
+        } else if scrollDirection == .Down {
+          self.toolbarHidden = true
+        }
         
         self.view.layoutIfNeeded()
-      }, completion: { succeed in
-         print(succeed)
+      }, completion: { success in
+        
+      })
+    } else if yOffset > toolbarHeight && !self.toolbarHidden {
+      print("skipped down")
+      UIView.animateWithDuration(0.45, animations: {
+        // Update webview constant
+        self.webContainerToPreviewView.constant = webContainerConstant
+        self.tabBarController?.tabBar.hidden = hideToolbar
+//        self.bottomToolbar.hidden = !hideToolbar
+        
+        if scrollDirection == .Up {
+          self.toolbarHidden = false
+        } else if scrollDirection == .Down {
+          self.toolbarHidden = true
+        }
+        
+        self.view.layoutIfNeeded()
+        }, completion: { success in
+          
+      })
+    } else if yOffset <= 0.0 && self.toolbarHidden {
+      print("skipped up")
+      UIView.animateWithDuration(0.45, animations: {
+        // Update webview constant
+        self.webContainerToPreviewView.constant = webContainerConstant
+        self.tabBarController?.tabBar.hidden = hideToolbar
+//        self.bottomToolbar.hidden = !hideToolbar
+        
+        if scrollDirection == .Up {
+          self.toolbarHidden = false
+        } else if scrollDirection == .Down {
+          self.toolbarHidden = true
+        }
+        
+        self.view.layoutIfNeeded()
+        }, completion: { success in
+          
       })
     }
   }
@@ -122,4 +161,8 @@ extension SecondViewController {
   func updateNavigationItemTitle(title: String) {
     self.navigationItem.title = title
   }
+}
+
+enum Direction {
+  case Up, Down, Left, Right, Unknown
 }
